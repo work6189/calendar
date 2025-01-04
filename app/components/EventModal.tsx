@@ -47,30 +47,30 @@ export default function EventModal({ isOpen, onClose, onSave, selectedDate, even
     <Modal
       isOpen={isOpen}
       onRequestClose={onClose}
-      className="max-w-md mx-auto mt-20 p-6 bg-white rounded-lg shadow-xl"
-      overlayClassName="fixed inset-0 bg-black bg-opacity-50"
+      className="w-[95%] max-w-md mx-auto mt-10 p-4 bg-white rounded-lg shadow-xl md:mt-20 md:p-6 text-black"
+      overlayClassName="fixed inset-0 bg-black bg-opacity-50 z-50 text-black"
     >
-      <h2 className="text-xl font-bold mb-4">
+      <h2 className="text-lg md:text-xl font-bold mb-4">
         {event ? '일정 수정' : '새 일정 추가'}
       </h2>
       <form onSubmit={handleSubmit}>
-        <div className="mb-4">
-          <label className="block mb-2">제목</label>
+        <div className="mb-3 md:mb-4">
+          <label className="block mb-1 md:mb-2">제목</label>
           <input
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border rounded text-base"
             required
           />
         </div>
-        <div className="mb-4">
-          <label className="block mb-2">시간</label>
+        <div className="mb-3 md:mb-4">
+          <label className="block mb-1 md:mb-2">시간</label>
           <input
             type="time"
             value={time}
             onChange={(e) => setTime(e.target.value)}
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border rounded text-base"
             required
           />
         </div>
@@ -78,13 +78,13 @@ export default function EventModal({ isOpen, onClose, onSave, selectedDate, even
           <button
             type="button"
             onClick={onClose}
-            className="px-4 py-2 bg-gray-200 rounded"
+            className="px-3 py-1.5 md:px-4 md:py-2 bg-gray-200 rounded text-sm md:text-base"
           >
             취소
           </button>
           <button
             type="submit"
-            className="px-4 py-2 bg-blue-500 text-white rounded"
+            className="px-3 py-1.5 md:px-4 md:py-2 bg-blue-500 text-white rounded text-sm md:text-base"
           >
             저장
           </button>

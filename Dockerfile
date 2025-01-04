@@ -11,7 +11,7 @@ COPY ./app .
 WORKDIR /usr/src/app
 
 # 종속성 설치
-RUN npm install date-fns react-modal
+RUN npm install
 
 # Next.js 애플리케이션을 빌드합니다.
 RUN npm run build
@@ -21,5 +21,3 @@ CMD ["npm", "start"]
 
 # Docker 컨테이너가 3000 포트를 노출하도록 설정합니다.
 EXPOSE 3000
-
-
